@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "MainViewController.h"
+
+#import "Common.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +20,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    MainViewController *main = [[MainViewController alloc]init];
+    self.window.rootViewController = main;
+
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    
+    self.window.clipsToBounds  = YES;
+    [self.window setBackgroundColor:SETCOLOR(244, 244, 244)];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
